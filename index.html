@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国际游戏大师俱乐部 - 会员资格</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+        :root {
+            --primary-color: #FFD700; /* Gold */
+            --background-start: #0a0f2a;
+            --background-end: #101a40;
+            --text-color: #EAEAEA;
+            --subtitle-color: #B0C4DE; /* LightSteelBlue */
+            --container-bg: rgba(10, 15, 42, 0.75);
+            --glow-color: rgba(255, 215, 0, 0.8);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0f2acc, #101a40cc, #000000cc), url('https://www.transparenttextures.com/patterns/stardust.png');
+            background-size: cover;
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(20, 30, 50, 0.6);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            filter: drop-shadow(0 0 15px var(--glow-color));
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #FFD700; /* Gold */
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        .subtitle {
+            font-size: 1.3em;
+            color: #B0C4DE; /* LightSteelBlue */
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        .video-container {
+            margin: 30px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            border: 2px solid #FFD700;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .price {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #FFD700;
+            margin: 30px 0;
+            text-shadow: 0 0 15px #FFD700;
+        }
+        .price span {
+            font-size: 0.5em; 
+            color: #B0C4DE;
+            font-weight: 400;
+        }
+        .form-container {
+            margin: 30px 0;
+            text-align: left;
+        }
+        .form-container p {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            background-color: rgba(11, 15, 43, 0.8);
+            color: #EAEAEA;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        .form-container input:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .cta-button {
+            background: linear-gradient(145deg, #FFD700, #FFA500);
+            color: #0b0f2b;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        .cta-button:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+        }
+        .features {
+            text-align: left;
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(20, 30, 50, 0.4);
+            border-radius: 15px;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        .features h2 {
+            text-align: center;
+            color: #FFD700;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            border-bottom: none;
+        }
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            margin-bottom: 18px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            color: #FFFFFF; /* 白色字体，确保清晰可见 */
+        }
+        .features li::before {
+            content: '✨';
+            color: #FFD700;
+            font-size: 1.5em;
+            margin-right: 15px;
+            text-shadow: 0 0 5px #FFD700;
+        }
+        .final-cta {
+            margin-top: 20px; 
+            font-size: 1.2em; 
+            font-weight: 600;
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="https://i.imgur.com/J213D2W.png" alt="游戏领航 LOGO" class="logo">
+            </div>
+            <h1>解锁宇宙密码：142857</h1>
+            <p class="subtitle">加入国际游戏大师俱乐部，开启您的财富之旅</p>
+        </div>
+
+        <div class="video-container">
+            <video controls poster="https://via.placeholder.com/800x450.png/0b0f2b/FFD700?text=宣传视频">
+                您的浏览器不支持视频播放。
+            </video>
+        </div>
+
+        <div class="price">$6800 <span>USDT</span></div>
+
+        <div class="form-container">
+            <p>输入您的信息，锁定未来权益空投</p>
+            <input type="email" id="email" name="email" placeholder="您的邮箱地址 (Your Email)" required>
+            <input type="text" id="wallet" name="wallet" placeholder="您的ETH/BSC钱包地址 (Your ETH/BSC Wallet Address)" required>
+        </div>
+
+        <div class="button-group">
+            <a href="https://www.okx.com/web3/nft/markets/collection/eth/international-game-masters-club" target="_blank" class="cta-button" onclick="return captureData()">立即前往欧易市场 抢购NFT</a>
+        </div>
+
+        <div class="features">
+            <h2>会员专属权益</h2>
+            <ul>
+                <li>获得一枚独特的NFT会员凭证 (合约: 0x47888A...5911)</li>
+                <li>访问“宇宙密码142857”独家内容和预测工具</li>
+                <li>参与“全球1500亿随机经济重构”计划的早期机会</li>
+                <li>进入AI第四次浪潮高端社群，链接行业顶尖资源</li>
+                <li>未来项目收益分红权</li>
+            </ul>
+            <p class="final-cta"><b>付款即得NFT，无需等待，全球唯一会员凭证。</b></p>
+        </div>
+    </div>
+
+    <script>
+        function captureData() {
+            const email = document.getElementById('email').value;
+            const wallet = document.getElementById('wallet').value;
+
+            if (!email || !wallet) {
+                alert("请填写您的邮箱和钱包地址，以确保能收到未来权益空投！");
+                return false; // 阻止链接跳转
+            }
+
+            // 模拟将数据发送到后端
+            console.log(`数据已捕获: Email=${email}, Wallet=${wallet}`);
+            
+            // 在真实场景中，这里会通过API调用data_handler.py中的add_customer函数
+            alert("信息已记录！您将被引导至欧易NFT市场完成购买。\n购买成功后，NFT即刻到账。");
+            return true; // 允许链接跳转
+        }
+    </script>
+</body>
+</html>
