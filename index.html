@@ -27,17 +27,22 @@
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,255,255,0.5);
     }
-    button {
-      margin: 8px;
-      padding: 8px 16px;
-      background: #007bff;
-      color: white;
+    input, textarea, button {
+      padding: 12px;
+      margin: 8px 0;
+      width: 100%;
       border: none;
       border-radius: 6px;
-      cursor: pointer;
     }
-    button:hover {
-      background: #0056b3;
+    input, textarea {
+      background: #111;
+      color: white;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
     }
     .nft-info {
       background: #111;
@@ -47,8 +52,12 @@
       text-align: left;
       display: inline-block;
     }
-    .nft-info ul {
-      padding-left: 20px;
+    .contact-form {
+      background: #0a0a0a;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+      text-align: left;
     }
   </style>
 </head>
@@ -56,21 +65,37 @@
 
 <div class="container">
 
-  <!-- 视频播放器模块 -->
+  <!-- 视频播放器 -->
   <h2>AI第四次浪潮 — 密码已破，浪潮已起</h2>
-  <video id="main-video" controls width="100%" poster="浪潮1.png">
-    <source src="破解金字塔数字142857（二）.mp4" type="video/mp4">
+  <video id="main-video" controls width="100%" poster="cover.png">
+    <source src="video.mp4" type="video/mp4">
     您的浏览器不支持视频播放。
   </video>
 
   <!-- 控制按钮 -->
   <div style="margin-top: 16px;">
     <button onclick="document.getElementById('main-video').currentTime=0">重新播放</button>
-    <button onclick="navigator.share ? navigator.share({title: 'AI第四次浪潮', url: window.location.href}) : alert('当前浏览器不支持分享功能')">分享</button>
-    <button onclick="this.innerHTML = '👍 已点赞'; this.disabled=true; this.style.opacity=0.6">点赞</button>
+    <button onclick="navigator.share ? navigator.share({title:'AI浪潮',url:window.location.href}) : alert('分享功能受限')">分享</button>
+    <button onclick="this.innerHTML='👍 已点赞';this.disabled=true">点赞</button>
   </div>
 
-  <!-- 原有会员权益内容 -->
+  <!-- 上方表单（第一次收集） -->
+  <div class="contact-form">
+    <h3>📩 立即申请会员资格</h3>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+      <input type="email" name="email" placeholder="📧 邮箱地址（必填）" required />
+
+      <input type="text" name="wallet" placeholder="💼 钱包地址（如 0x...，必填）" required />
+
+      <textarea name="message" placeholder="💡 您对项目的兴趣或问题"></textarea>
+
+      <button type="submit">✅ 提交申请，获取NFT凭证</button>
+    </form>
+  </div>
+
+  <!-- 会员权益 -->
   <div class="nft-info">
     <h2>$6800 USDT</h2>
     <h3>会员专属权益</h3>
@@ -84,8 +109,27 @@
     <p><strong>付款即得NFT，无需等待，全球唯一会员凭证。</strong></p>
   </div>
 
+  <!-- 下方表单（第二次收集，增强转化） -->
+  <div class="contact-form">
+    <h3>🔁 错过上面？现在还可提交</h3>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+      <input type="email" name="email" placeholder="📧 邮箱地址" required />
+
+      <input type="text" name="wallet" placeholder="💼 钱包地址（如 0x...）" required />
+
+      <textarea name="message" placeholder="📌 请说明您的背景与兴趣"></textarea>
+
+      <button type="submit">🚀 抢占最后席位</button>
+    </form>
+  </div>
+
 </div>
 
-</body>
+<script>
+  document.querySelector('video').id = 'main-video';
+</script>
 
+</body>
 </html>
